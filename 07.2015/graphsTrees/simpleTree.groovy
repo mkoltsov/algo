@@ -43,7 +43,7 @@ def countTheValue = { _ ->
 	def cnt = 0 	
 	_.children.each { child ->
 		println("${child}")
-		cnt += child.value
+		cnt += countTheValue(child)
 	}
 	return cnt 
 }
