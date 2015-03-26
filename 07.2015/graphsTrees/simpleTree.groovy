@@ -1,5 +1,5 @@
 abstract class Node {
-	private Node[] children
+	Node[] children
 
 	Node(Node[] children) {
 		this.children = children
@@ -15,7 +15,7 @@ abstract class Node {
 }
 
 class IntNode extends Node {
-	private def value
+	def value
 
 	IntNode(def children, def value){
 		super(children)
@@ -38,6 +38,16 @@ def ancestorA = new IntNode([leafDescendant1, leafDescendant2, leafDescendant], 
 def ancestorB = new IntNode([leafDescendant3, leafDescendant4], 200)
 
 def rootNode = new IntNode([ancestorA, ancestorB, leafDescendant5], 1000)
+
+def countTheValue = { _ ->
+	def cnt 	
+	_.children.each { child ->
+		cnt += child.value
+	}
+	return cnt 
+}
+
+println(countTheValue(ancestorA))
 
 
 
