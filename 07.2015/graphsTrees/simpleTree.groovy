@@ -40,14 +40,15 @@ def ancestorB = new IntNode([leafDescendant3, leafDescendant4], 200)
 def rootNode = new IntNode([ancestorA, ancestorB, leafDescendant5], 1000)
 
 def countTheValue = { _ ->
-	def cnt 	
+	def cnt = 0 	
 	_.children.each { child ->
+		println("${child}")
 		cnt += child.value
 	}
 	return cnt 
 }
 
-println(countTheValue(ancestorA))
+println(countTheValue(rootNode))
 
 
 
