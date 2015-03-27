@@ -15,9 +15,9 @@ abstract class Node {
 }
 
 class IntNode extends Node {
-	private int value
+	private def value
 
-	IntNode(Node[] children, int value){
+	IntNode(def children, def value){
 		super(children)
 		this.value = value
 	}
@@ -34,5 +34,10 @@ def leafDescendant3 = new IntNode([], 13)
 def leafDescendant4 = new IntNode([], 14)
 def leafDescendant5 = new IntNode([], 15)
 
-def ancestorA = new IntNode()
+def ancestorA = new IntNode([leafDescendant1, leafDescendant2, leafDescendant], 100)
+def ancestorB = new IntNode([leafDescendant3, leafDescendant4], 200)
+
+def rootNode = new IntNode([ancestorA, ancestorB, leafDescendant5], 1000)
+
+
 
