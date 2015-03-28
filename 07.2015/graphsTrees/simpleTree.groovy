@@ -21,4 +21,18 @@ class IntNode extends Node {
 		super(children)
 		this.value = value
 	}
+
+	def addChild(Node child) {
+		children.add(child)
+	}
 }
+
+def leafDescendant = new IntNode([], 10)
+def leafDescendant1 = new IntNode([], 11)
+def leafDescendant2 = new IntNode([], 12)
+def leafDescendant3 = new IntNode([], 13)
+def leafDescendant4 = new IntNode([], 14)
+def leafDescendant5 = new IntNode([], 15)
+
+def ancestorA = new IntNode()
+
