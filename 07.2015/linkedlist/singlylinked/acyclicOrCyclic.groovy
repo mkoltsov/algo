@@ -21,7 +21,7 @@ class SinglyLinkedList<T> {
 		}
 	} 
 
-	def acyclicOrCyclic(){
+	def acyclicOrCyclicMemoryConsuming(){
 		def symbolTable = []
 		def newHead = head
 		while(newHead) {
@@ -38,6 +38,11 @@ class SinglyLinkedList<T> {
 		
 			newHead = newHead.next
 		}
+	}
+
+	def acyclicOrCyclic(){
+		def fastPointer = head.next
+		def slowPointer = head
 	}
 
 	def deque (){
@@ -69,4 +74,4 @@ class SinglyLinkedList<T> {
 	list.enque(chef3)
 	list.enque(chef4)
 	list.enque(chef5)
-	list.acyclicOrCyclic()
+	list.acyclicOrCyclicMemoryConsuming()
