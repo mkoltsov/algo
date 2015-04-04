@@ -70,10 +70,3 @@ class SinglyLinkedList<T> {
 	list.enque(chef4)
 	list.enque(chef5)
 	list.acyclicOrCyclic()
-	//list.print()
-
-	//list.deque()
-
-	//list.print()
-
-	//list.acyclicOrCyclic()
