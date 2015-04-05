@@ -24,7 +24,6 @@ class SinglyLinkedList<T> {
 	def acyclicOrCyclic(){
 		def symbolTable = []
 		def newHead = head
-		def i = 0
 		while(newHead) {
 			if (newHead.next == null) {
 				println("acyclic")
