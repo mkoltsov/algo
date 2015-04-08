@@ -22,11 +22,24 @@ class SinglyLinkedList<T> {
 	} 
 
 	def acyclicOrCyclic(){
-		def clos = {_ -> 
-			if (_.next == null) {
+		def symbolTable = [:]
+		def newHead = head
+		def i = 0
+		while(newHead) {
+			if (newHead.next == null) {
 				println("acyclic")
-				}}
-				iterateWithClosure(clos)
+			}
+
+			if (!symbolTable[newHead.value]) {
+				symbolTable.put(newHead.value, 1)
+				println("inserting to hashtable ${newHead.value}")
+			} else {
+				println("cyclic")
+				return
+			}
+		
+			newHead = newHead.next
+		}
 	}
 
 	def deque (){
@@ -51,7 +64,7 @@ class SinglyLinkedList<T> {
 	def chef2 = new ListElement<String>(value:"Pupa")
 	def chef3 = new ListElement<String>(value:"Bupa")
 	def chef4 = new ListElement<String>(value:"Diop")
-	def chef5 = new ListElement<String>(value:"Shmiot", next:chef3)
+	def chef5 = new ListElement<String>(value:"Shmiot", next:chef)
 	list.enque(chef)
 	list.enque(chef1)
 	list.enque(chef2)
