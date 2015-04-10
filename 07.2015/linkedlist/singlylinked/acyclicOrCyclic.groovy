@@ -23,7 +23,11 @@ class SinglyLinkedList<T> {
 		} 
 
 		def acyclicOrCyclic(){
-			def clos = {_ -> }
+			def clos = {_ -> 
+				if (_.next == null) {
+						println("acyclic")
+					}}
+			iterateWithClosure(clos)
 		}
 
 		def deque (){
@@ -54,3 +58,5 @@ class SinglyLinkedList<T> {
 	list.deque()
 
 	list.print()
+
+	list.acyclicOrCyclic()
