@@ -13,8 +13,17 @@ class SinglyLinkedList<T> {
 			}
 		}
 
-		def acyclicOrCyclic(){
+		def iterateWithClosure(def clos) {
+			def newHead = head
 
+			while(newHead) {
+				clos(newHead)
+				newHead = newHead.next
+			}
+		} 
+
+		def acyclicOrCyclic(){
+			def clos = {_ -> }
 		}
 
 		def deque (){
@@ -22,12 +31,8 @@ class SinglyLinkedList<T> {
 		}
 
 		def print() {
-			def newHead = head
-
-			while(newHead) {
-				println(newHead.value)
-				newHead = newHead.next
-			}
+			def pr = {_ -> println(_.value)}
+			iterateWithClosure(pr)
 		}
 
 		class ListElement<T> {
