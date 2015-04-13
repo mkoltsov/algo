@@ -15,10 +15,24 @@ class DoublyLinkedList<T> {
 
 		}
 
+		def unFlat() {
+			def head = head
+			while (head) {
+				if (head.child) {
+					def previous = tail
+					tail.next = head.child
+					//need to investigate why does this code even work????
+					tail = head.child.tail
+					tail.previous = previous
+				}				
+				head = head.next
+			}
+		}
+
+		//with recursion
 		def flat(def list) {
 			def head = list
 			while (head) {
-		//implement
 				if (head.child) {
 					head.child.previous.next = null
 					head.child.previous = null
@@ -27,9 +41,11 @@ class DoublyLinkedList<T> {
 				head = head.next
 			}
 		}
-
+		//without recursion, not implemented
 		def flatList() {
-			def head = head
+			def childHeads = []
+
+
 
 			while (head) {
 				
@@ -100,3 +116,5 @@ class DoublyLinkedList<T> {
 	list.unFlat()
 	println("after unflat")
 	printFromHead(list)
+
+	list.flat()
