@@ -15,13 +15,27 @@ class DoublyLinkedList<T> {
 
 		}
 
+		def flat(def list) {
+			def head = list
+			while (head) {
+		//implement
+				if (head.child) {
+					head.child.previous.next = null
+					head.child.previous = null
+					flat(head.child)
+				} 
+				head = head.next
+			}
+		}
+
 		def flatList() {
 			def head = head
 
 			while (head) {
 				
 				if (head.child) {
-
+					head.child.previous.next = null
+					head.child.previous = null
 				}
 				head = head.next
 			}
