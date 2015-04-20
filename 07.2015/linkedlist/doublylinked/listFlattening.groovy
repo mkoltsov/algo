@@ -15,8 +15,20 @@ class DoublyLinkedList<T> {
 
 		}
 
+		def flatList() {
+			def head = head
+
+			while (head) {
+				
+				if (head.child) {
+
+				}
+				head = head.next
+			}
+		}
+
 		def addChild(def child) {
-			tail.child = child.head
+			head.child = child.head
 		}
 
 		private class LinkedListElement<T> {
