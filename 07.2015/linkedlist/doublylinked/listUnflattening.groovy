@@ -25,6 +25,7 @@ class DoublyLinkedList<T> {
 				if (head.child) {
 					def previous = tail
 					tail.next = head.child
+					//need to investigate why does this code even work????
 					tail = head.child.tail
 					tail.previous = previous
 				}				
