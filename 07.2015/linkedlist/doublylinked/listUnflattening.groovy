@@ -51,7 +51,7 @@ class DoublyLinkedList<T> {
 	list.enque("Stew")
 	list.enque("Phew")
 
-	def printFromHead = {_ ->
+	def printFromHead = { _ ->
 		def head = _.head
 
 		while (head) {
@@ -68,8 +68,6 @@ class DoublyLinkedList<T> {
 		println(tail.value)
 		tail = tail.previous
 	}
-
-
 
 	def list2 = new DoublyLinkedList<String>()
 
@@ -89,6 +87,3 @@ class DoublyLinkedList<T> {
 	list.unFlat()
 	println("after unflat")
 	printFromHead(list)
-
-
-
