@@ -16,7 +16,7 @@ class DoublyLinkedList<T> {
 		}
 
 		def addChild(def child) {
-			tail.child = child
+			tail.child = child.head
 		}
 
 		def unFlat() {
@@ -87,7 +87,7 @@ class DoublyLinkedList<T> {
 	list.addChild(list2)
 
 	list.unFlat()
-
+	println("after unflat")
 	printFromHead(list)
 
 
