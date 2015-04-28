@@ -84,7 +84,11 @@ class DoublyLinkedList<T> {
 
 	printFromHead(list2)
 
-	list1.addChild(list2)
+	list.addChild(list2)
+
+	list.unFlat()
+
+	printFromHead(list)
 
 
 
