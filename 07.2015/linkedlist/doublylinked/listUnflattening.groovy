@@ -22,14 +22,16 @@ class DoublyLinkedList<T> {
 		def unFlat() {
 			def head = head
 			while (head) {
-				if (head.next.child) {
-					tail.next = head.next.child
-					tail = head.next.child
+				if (head.child) {
+					def previous = tail
+					tail.next = head.child
+					tail = head.child.tail
+					tail.previous = previous
 				}				
 				head = head.next
 			}
 		}
-		
+
 		private class LinkedListElement<T> {
 			T value
 			LinkedListElement<T> next
@@ -38,7 +40,7 @@ class DoublyLinkedList<T> {
 		}
 	}
 
-	def list1 = new DoublyLinkedList<String>()
+	def list = new DoublyLinkedList<String>()
 
 	list.enque("Chef")
 	list.enque("Pupa")
@@ -49,12 +51,16 @@ class DoublyLinkedList<T> {
 	list.enque("Stew")
 	list.enque("Phew")
 
-	def head = list.head
+	def printFromHead = {_ ->
+		def head = _.head
 
-	while (head) {
-		println(head.value)
-		head = head.next
+		while (head) {
+			println(head.value)
+			head = head.next
+		}
 	}
+
+	printFromHead(list)
 
 	def tail = list.tail
 
@@ -64,16 +70,21 @@ class DoublyLinkedList<T> {
 	}
 
 
+
 	def list2 = new DoublyLinkedList<String>()
 
-	list.enque("Chef1")
-	list.enque("Pupa1")
-	list.enque("Bupa1")
-	list.enque("Diop1")
-	list.enque("Diode1")
-	list.enque("Drew1")
-	list.enque("Stew1")
-	list.enque("Phew1")
+	list2.enque("Chef1")
+	list2.enque("Pupa1")
+	list2.enque("Bupa1")
+	list2.enque("Diop1")
+	list2.enque("Diode1")
+	list2.enque("Drew1")
+	list2.enque("Stew1")
+	list2.enque("Phew1")
+
+	printFromHead(list2)
 
 	list1.addChild(list2)
+
+
 
