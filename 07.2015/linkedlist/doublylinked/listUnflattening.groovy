@@ -19,6 +19,17 @@ class DoublyLinkedList<T> {
 			tail.child = child
 		}
 
+		def unFlat() {
+			def head = head
+			while (head) {
+				if (head.next.child) {
+					tail.next = head.next.child
+					tail = head.next.child
+				}				
+				head = head.next
+			}
+		}
+		
 		private class LinkedListElement<T> {
 			T value
 			LinkedListElement<T> next
