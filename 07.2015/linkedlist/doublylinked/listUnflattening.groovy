@@ -15,6 +15,10 @@ class DoublyLinkedList<T> {
 
 		}
 
+		def addChild(def child) {
+			tail.child = child
+		}
+
 		private class LinkedListElement<T> {
 			T value
 			LinkedListElement<T> next
@@ -60,4 +64,5 @@ class DoublyLinkedList<T> {
 	list.enque("Stew1")
 	list.enque("Phew1")
 
-	
+	list1.addChild(list2)
+
