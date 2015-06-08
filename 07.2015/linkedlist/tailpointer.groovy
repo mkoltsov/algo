@@ -5,7 +5,7 @@ class LinkedListList<T> {
 	def LinkedListElement<T> tail
 
 	def addNew(T value){
-		def newNode  = new LinkedListElement<T>(value: value)
+		def newNode = new LinkedListElement<T>(value: value)
 		if (!head) {
 			head = newNode
 			tail = newNode
@@ -16,7 +16,7 @@ class LinkedListList<T> {
 		}
 
 		def insertInFront(T value) {
-			head  = new LinkedListElement<T>(value: value, next:head)
+			head = new LinkedListElement<T>(value: value, next:head)
 		}
 
 		def deleteHead(){
