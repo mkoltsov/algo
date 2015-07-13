@@ -12,10 +12,36 @@ class ListElement<T> {
 	def static findElement(ListElement<T> head, T data) {
 		def elem = head
 		while(elem && elem.value!=data) {
+			println("traversing ${elem.value}")
 			elem = elem.next
 		}
 
-		return elem
+		return elem ? elem : "no element has been found"
+	}
+
+	def static boolean deleteElement(ListElement<T> head, ListElement<T> deleteMe) {
+		if (!head || !deleteMe) {
+			return false
+		}
+
+		def elem = head
+
+		if (deleteMe.is(head)) {
+			head = elem.next
+			deleteMe = null
+			return true
+		}
+
+		while(elem) {
+			if (elem.next.is(deleteMe)) {
+				println(elem)
+				elem.next = deleteMe.next
+				deleteMe = null
+				return true
+			}
+			elem = elem.next
+		}
+		return false
 	}
 }
 //First approach
@@ -34,7 +60,10 @@ def ListMiddle = new ListElement<String>(value:"ListMiddle1", next:ListMiddle1)
 def listStart = new ListElement<String>(value:"First", next:ListMiddle)
 
 println(listStart.findElement(listStart, "ListEnd").value)
-println(listStart.findElement(listStart, "Chef"))
+println("deleting ${ListMiddle3.value}")
+ListElement.deleteElement(listStart, ListMiddle3)
+
+println(listStart.findElement(listStart, "CHEF"))
 
 println(listStart.next.next.value)
 
