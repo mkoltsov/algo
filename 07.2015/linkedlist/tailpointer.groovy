@@ -1,6 +1,8 @@
 //import groovy.transform.Canonical
 //@Canonical
 class LinkedListElement<T> {
+	def LinkedListElement<T> head
+	def LinkedListElement<T> tail
 	def T value
 	def LinkedListElement<T> next
 }
