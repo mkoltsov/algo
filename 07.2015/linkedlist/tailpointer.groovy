@@ -13,7 +13,6 @@ class LinkedListList<T> {
 				tail.next = newNode
 			}
 			tail = newNode
-			tail.next = null
 		}
 
 		def deleteHead(LinkedListElement deleted){
@@ -39,7 +38,7 @@ class LinkedListList<T> {
 	list.addNew("Chef12")
 
 	def head = list.head
-	while(head.next) {
+	while(head) {
 		println(head.value)
 		head = head.next
 	}
