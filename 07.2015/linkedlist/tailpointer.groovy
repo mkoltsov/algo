@@ -15,8 +15,12 @@ class LinkedListList<T> {
 			tail = newNode
 		}
 
-		def deleteHead(LinkedListElement deleted){
+		def insertInFront(T value) {
+			head  = new LinkedListElement<T>(value: value, next:head)
+		}
 
+		def deleteHead(){
+			head = head.next
 		}
 
 		private class LinkedListElement<T> {
@@ -36,6 +40,19 @@ class LinkedListList<T> {
 	list.addNew("Chef9")
 	list.addNew("Chef11")
 	list.addNew("Chef12")
+
+	list.deleteHead()
+	list.deleteHead()
+	list.deleteHead()
+	list.deleteHead()
+	list.deleteHead()
+
+	list.insertInFront("Chef31337")
+	list.insertInFront("Chef31338")
+	list.insertInFront("Chef31339")
+	list.insertInFront("Chef313310")
+	list.insertInFront("Chef313311")
+	list.insertInFront("Chef313312")
 
 	def head = list.head
 	while(head) {
