@@ -23,7 +23,7 @@ class DoublyLinkedList<T> {
 		}
 	}
 
-	def list = new DoublyLinkedList<String>()
+	def list1 = new DoublyLinkedList<String>()
 
 	list.enque("Chef")
 	list.enque("Pupa")
@@ -47,3 +47,17 @@ class DoublyLinkedList<T> {
 		println(tail.value)
 		tail = tail.previous
 	}
+
+
+	def list2 = new DoublyLinkedList<String>()
+
+	list.enque("Chef1")
+	list.enque("Pupa1")
+	list.enque("Bupa1")
+	list.enque("Diop1")
+	list.enque("Diode1")
+	list.enque("Drew1")
+	list.enque("Stew1")
+	list.enque("Phew1")
+
+	
