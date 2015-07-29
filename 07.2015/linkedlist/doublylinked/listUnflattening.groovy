@@ -81,9 +81,21 @@ class DoublyLinkedList<T> {
 	list2.enque("Stew1")
 	list2.enque("Phew1")
 
+	def list3 = new DoublyLinkedList<String>()
+
+	list3.enque("Chef12")
+	list3.enque("Pupa12")
+	list3.enque("Bupa12")
+	list3.enque("Diop12")
+	list3.enque("Diode12")
+	list3.enque("Drew12")
+	list3.enque("Stew12")
+	list3.enque("Phew12")
+
 	printFromHead(list2)
 
 	list.addChild(list2)
+	list2.addChild(list3)
 
 	list.unFlat()
 	println("after unflat")
