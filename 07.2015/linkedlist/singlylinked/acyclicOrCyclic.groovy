@@ -41,8 +41,19 @@ class SinglyLinkedList<T> {
 	}
 
 	def acyclicOrCyclic(){
-		def fastPointer = head.next
+		def fastPointer = head
 		def slowPointer = head
+
+		while(true) {
+			if (fastPointer == null || fastPointer.next == null) {
+				return "acyclic"
+			} else if (fastPointer.is(slowPointer) || fastPointer.next.is(slowPointer)) {
+				return "cyclic"
+			} else {
+				fastPointer = fastPointer.next.next
+				slowPointer = slowPointer.next
+			}
+		}
 	}
 
 	def deque (){
@@ -75,3 +86,4 @@ class SinglyLinkedList<T> {
 	list.enque(chef4)
 	list.enque(chef5)
 	list.acyclicOrCyclicMemoryConsuming()
+	println(list.acyclicOrCyclic())
