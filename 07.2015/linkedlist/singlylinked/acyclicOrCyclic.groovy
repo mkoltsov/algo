@@ -16,7 +16,7 @@ class SinglyLinkedList<T> {
 		def acyclicOrCyclic(){
 
 		}
-		
+
 		def deque (){
 			head = head.next
 		}
@@ -45,8 +45,6 @@ class SinglyLinkedList<T> {
 	list.enque("Diop")
 	list.enque("Shmiot")
 	list.print()
-
-
 
 	list.deque()
 
