@@ -40,7 +40,7 @@ class SinglyLinkedList<T> {
 		}
 	}
 
-	def acyclicOrCyclic(){
+	def acyclicOrCyclicTwoPointersApproach(){
 		def fastPointer = head
 		def slowPointer = head
 
@@ -86,4 +86,4 @@ class SinglyLinkedList<T> {
 	list.enque(chef4)
 	list.enque(chef5)
 	list.acyclicOrCyclicMemoryConsuming()
-	println(list.acyclicOrCyclic())
+	println(list.acyclicOrCyclicTwoPointersApproach())
