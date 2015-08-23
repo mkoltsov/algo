@@ -19,6 +19,7 @@ class DoublyLinkedList<T> {
 			T value
 			LinkedListElement<T> next
 			LinkedListElement<T> previous
+			LinkedListElement<T> child
 		}
 	}
 
