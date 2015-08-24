@@ -8,9 +8,9 @@ class DoublyLinkedList<T> {
 			tail = newNode
 		} else {
 			tail.next = newNode
-			tail.previous = tail
+			def previous = tail
 			tail = newNode
-			//new LinkedListElement(value: value, next:null, previous:tail)
+			tail.previous = previous
 		}
 
 	}
